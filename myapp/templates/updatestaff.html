@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>National Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      body {
+        background-image:url('/static/img/i23.jpg');
+        background-size:cover;
+        background-position:center;
+        background-repeat:norepeat;
+        height:100vh;
+        width:auto;
+        position:relative;
+      }
+      .btn {
+          position:center;
+      }
+    </style>
+  </head>
+
+    <body>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">National Management</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/administer">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/teacher">Teacher</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/student">Student</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <form class="col-10" method="post">
+          {%csrf_token%}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><strong>Name</strong></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="{{info.name}}" required>
+            <div id="emailHelp" class="form-text">please enter correct name.</div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><strong>Email Address</strong></label>
+            <input type="email" class="form-control" id="exampleInputPassword1" name="email" value="{{info.email}}">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><strong>Mobile Number</strong></label>
+            <input type="number" class="form-control" id="exampleInputPassword1" name="mobile" value="{{info.mobile}}" minlength="10">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><strong>Salary</strong></label>
+            <input type="number" class="form-control" id="exampleInputPassword1" name="salary"  value="{{info.salary}}" required>
+          </div>
+          <div class="mb-4">
+            <label for="exampleInputPassword1" class="form-label"><strong>Subject</strong></label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="subject" value="{{info.subject}}" required>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-success" >Update Staff</button>
+             <a href="viewstaff1" class="btn btn-success mx-auto"  role="button" >Back</a>
+        </div>
+          
+        
+        </form>
+      </div>
+      
+      
+    </body>
+    </html>
